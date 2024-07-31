@@ -31,7 +31,6 @@ class OurClientController extends Controller
     {
         $rules    	= [
                         'nama'		     		=> 'required',
-                        'file'		     		=> 'required'
                     ];
 
         $messages 	= [];
@@ -75,7 +74,6 @@ class OurClientController extends Controller
     {
         $rules    	= [
             'nama'		     		=> 'required',
-            'file'		     		=> 'required'
         ];
 
         $messages 	= [];
