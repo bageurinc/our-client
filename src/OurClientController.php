@@ -44,11 +44,8 @@ class OurClientController extends Controller
         }else{
             $data               = new our_client;
             $data->nama        = $request->nama;
-            if ($request->file != null) {
-                $upload = \Bageur::base64($request->file,'bageur.id/our-client');
-                $data->logo        = $upload['up'];
-                $data->logo_path   = $upload['path'];
-            }
+            $data->logo        = $request->logo;
+            $data->logo_path   = $request->logo_path;
             $data->save();
 
             return response(['status' => true ,'text'    => 'has input'], 200);
@@ -91,13 +88,9 @@ class OurClientController extends Controller
         }else{
         $data               = our_client::findOrFail($id);
         $data->nama        = $request->nama;
-        if ($request->file != null) {
-            $upload = \Bageur::base64($request->file,'bageur.id/our-client');
-            $data->logo        = $upload['up'];
-            $data->logo_path   = $upload['path'];
-        }
+        $data->logo        = $request->logo;
+        $data->logo_path   = $request->logo_path;
         $data->save();
-
         return response(['status' => true ,'text'    => 'has updated'], 200);
         }
     }
